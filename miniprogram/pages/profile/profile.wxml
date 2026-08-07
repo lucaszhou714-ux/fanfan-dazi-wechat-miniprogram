@@ -1,0 +1,26 @@
+<view class="page">
+ <view class="title">我的饭饭设置</view><view class="subtitle">让每一次推荐更懂你</view>
+ <view class="card">
+  <view class="section-title">基本偏好</view>
+  <view class="field-block"><text class="label">昵称</text><input value="{{profile.nickname}}" data-key="nickname" bindinput="field"/></view>
+  <view class="field-block"><text class="label">每餐预算上限（元）</text><input type="number" value="{{profile.budget}}" data-key="budget" bindinput="field"/></view>
+  <view class="field-block"><text class="label">忌口或不喜欢</text><textarea value="{{profile.dislikes}}" placeholder="例如：香菜、花生；没有可留空" data-key="dislikes" bindinput="field" maxlength="100" auto-height/></view>
+  <button class="primary full-button" bindtap="save">保存设置</button>
+ </view>
+ <view class="card"><view class="section-title">自定义菜品</view><view class="inline"><input value="{{customDish}}" placeholder="例如：公司楼下烧鹅饭" bindinput="inputDish"/><button class="secondary small" bindtap="addDish">添加</button></view><view><text class="tag" wx:for="{{customDishes}}" wx:key="id">{{item.name}}</text></view></view>
+ <view class="card">
+  <view class="section-title">本周尝鲜主题</view>
+  <view class="hint">每周生成一个轻松方向，帮你们少纠结；下周一可更新。</view>
+  <view class="weekly">{{weekly}}</view>
+  <button class="secondary full-button" disabled="{{weeklyDone}}" bindtap="weekly">{{weeklyDone?'本周已生成':'生成本周主题'}}</button>
+ </view>
+ <view class="card">
+  <view class="section-title">情侣奖励</view>
+  <view class="hint">奖励池可以随时添加，但每周只能领取一次。</view>
+  <view class="inline"><input value="{{reward}}" placeholder="例如：奶茶由我请" bindinput="inputReward"/><button class="secondary small" bindtap="addReward">添加</button></view>
+  <view class="muted count">奖励池已有 {{rewards.length}} 项</view>
+  <view wx:if="{{rewardResult}}" class="reward-result">🎁 {{rewardResult}}</view>
+  <button class="secondary full-button" disabled="{{rewardDone}}" bindtap="drawReward">{{rewardDone?'本周已领取':'领取本周奖励'}}</button>
+ </view>
+ <view class="card"><view class="section-title">数据与隐私</view><view class="muted">当前数据默认保存在本机；部署云函数后，可在情侣空间中同步。健康统计仅作生活记录，不构成医疗建议。</view></view>
+</view>

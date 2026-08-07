@@ -1,0 +1,7 @@
+<view class="page"><view class="title">今天吃什么？</view><view class="subtitle">给自己三次机会，选中就不再纠结</view>
+<view class="target"><text class="{{target==='self'?'active':''}}" data-value="self" bindtap="target">帮自己选</text><text wx:if="{{bound}}" class="{{target==='partner'?'active':''}}" data-value="partner" bindtap="target">帮 TA 选</text></view>
+<view class="card filters"><view><text>菜系</text><picker range="{{cuisines}}" value="{{ci}}" bindchange="cuisineChange"><view class="select">{{cuisines[ci]}} ›</view></picker></view><view><text>预算上限</text><slider min="15" max="60" step="5" value="{{budget}}" activeColor="#ef6b5b" show-value bindchange="budgetChange"/></view></view>
+<view class="wheel {{rolling?'spin':''}}"><view wx:if="{{result}}"><view class="dish-photo" style="{{resultStyle}}"></view><text class="result">{{result.name}}</text><text class="muted">{{result.cuisine}} · 约{{result.price}}元 · {{result.spicy}}</text><text wx:if="{{target==='partner'}}" class="forwho">已同步给 TA</text></view><view wx:else><text class="emoji">🎲</text><text class="result">{{rolling?'正在认真挑选…':'准备好就帮你决定'}}</text></view></view>
+<view class="attempts">今日还可选择 {{remaining}} 次</view>
+<button class="primary big" disabled="{{limitReached||rolling}}" bindtap="draw">{{drawButtonText}}</button>
+<button wx:if="{{result}}" class="secondary" bindtap="accept">就吃这个</button><button wx:if="{{result}}" class="link" bindtap="goLogs">查看饮食日记</button></view>

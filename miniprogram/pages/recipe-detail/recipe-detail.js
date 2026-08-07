@@ -1,0 +1,2 @@
+const {recipes}=require('../../utils/recipes');const store=require('../../utils/store');
+Page({data:{recipe:null,favorite:false},onLoad(o){const recipe=recipes.find(x=>x.id===o.id)||recipes[0];this.setData({recipe,favorite:(store.getState().recipeFavorites||[]).includes(recipe.id)});},favorite(){const id=this.data.recipe.id;store.update(s=>{s.recipeFavorites=(s.recipeFavorites||[]).includes(id)?s.recipeFavorites.filter(x=>x!==id):[...(s.recipeFavorites||[]),id];});this.setData({favorite:!this.data.favorite});}});

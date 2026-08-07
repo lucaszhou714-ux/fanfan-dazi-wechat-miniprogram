@@ -1,0 +1,5 @@
+<view class="page"><view class="title">发现新味道</view><view class="subtitle">偶尔换换口味，也可以一起学做饭</view>
+<view class="theme"><view class="muted">本周尝鲜主题 · 周一更新</view><view class="theme-name">{{weekly}}</view><view class="theme-tip">试试新搭配，让这一周不重样</view><button wx:if="{{!weeklyDone}}" bindtap="theme">生成本周主题</button><view wx:else class="done">本周主题已生成</view></view>
+<view class="section-row"><view class="section-title">小菜讲堂</view><picker range="{{categories}}" bindchange="change"><view class="filter">{{category}}⌄</view></picker></view>
+<view class="scene-chips"><text>适合带饭</text><text>30分钟内</text><text>清淡一点</text></view>
+<view class="recipe-grid"><view class="recipe" wx:for="{{items}}" wx:key="id" data-id="{{item.id}}" bindtap="open"><view class="emoji">{{item.emoji}}</view><view class="name">{{item.name}}</view><view class="muted">{{item.minutes}} 分钟 · {{item.difficulty}}</view><text class="heart" data-id="{{item.id}}" catchtap="favorite">{{item.favorite?'♥':'♡'}}</text></view></view></view>

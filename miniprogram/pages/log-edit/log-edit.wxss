@@ -1,0 +1,1 @@
+.label{display:block;margin:24rpx 0 12rpx;color:#625751;font-weight:600}.picker{height:84rpx;line-height:84rpx;background:#faf6f3;border-radius:16rpx;padding:0 20rpx}.two{display:flex;gap:18rpx}.two>view{flex:1}.chosen{background:#ef6b5b;color:#fff}textarea{min-height:150rpx}button{margin-top:30rpx}

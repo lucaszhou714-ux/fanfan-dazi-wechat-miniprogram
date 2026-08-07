@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/plan/plan",
+    "pages/draw/draw",
+    "pages/logs/logs",
+    "pages/couple/couple",
+    "pages/profile/profile",
+    "pages/log-edit/log-edit",
+    "pages/report/report",
+    "pages/moments/moments",
+    "pages/recipes/recipes",
+    "pages/recipe-detail/recipe-detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "饭饭搭子",
+    "navigationBarBackgroundColor": "#fff8f3",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff8f3"
+  },
+  "tabBar": {
+    "color": "#8a7f78",
+    "selectedColor": "#ef6b5b",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "今天" },
+      { "pagePath": "pages/logs/logs", "text": "记录" },
+      { "pagePath": "pages/recipes/recipes", "text": "发现" },
+      { "pagePath": "pages/couple/couple", "text": "我们" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
